@@ -6,6 +6,17 @@ function App() {
 
   return (
     <>
+     
+      <label className="flex items-center gap-1">
+        🌞
+        <input
+          type="checkbox"
+          className="toggle"
+
+        />
+      🌚
+      </label>
+
       {
         arrayList.map((item, index) => (
           <div key={index} className="card bg-base-100 w-96 shadow-sm ">
