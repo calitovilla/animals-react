@@ -6,10 +6,25 @@ function App() {
 
   const arrayList = ['a', 'b', 'c', 'd', 'e'];
 
+  const [theme, setTheme] = useState(() => {
+    // Validate if the user has a preference for dark mode
+    // If so, set the theme to "aqua" (dark mode)
+    // Otherwise, set it to "light" (default mode)
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "aqua" : "light";
+  });
+
   useEffect(() => {
     themeChange(false)
     // 👆 false parameter is required for react project
   }, [])
+
+  const toggleTheme = () => {
+    setTheme(prev => {
+      document.documentElement.setAttribute("data-theme", prev === "light" ? "aqua" : "light");
+      return prev === "light" ? "aqua" : "light"
+    });
+  };
 
   return (
     <>
@@ -19,6 +34,8 @@ function App() {
         <input
           type="checkbox"
           className="toggle"
+          checked={theme === "aqua"}
+          onChange={toggleTheme}
         />
       🌚
       </label>
