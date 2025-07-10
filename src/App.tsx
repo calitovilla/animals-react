@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { themeChange } from 'theme-change'
 import './App.css'
 
 function App() {
+
   const arrayList = ['a', 'b', 'c', 'd', 'e'];
+
+  useEffect(() => {
+    themeChange(false)
+    // 👆 false parameter is required for react project
+  }, [])
 
   return (
     <>
@@ -12,7 +19,6 @@ function App() {
         <input
           type="checkbox"
           className="toggle"
-
         />
       🌚
       </label>
