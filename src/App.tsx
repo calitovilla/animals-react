@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import ThemeToggle from './components/ThemeToggle';
-import Card from './components/Card';
+import CardList from './components/card-list/CardList';
 import { generateFakePersons } from './utils/generateFakePersons';
 import type { Person } from './utils/generateFakePersons';
 import './App.css'
@@ -21,11 +21,7 @@ function App() {
   return (
     <>
       <ThemeToggle />
-      {
-        persons.map((person, index) => (
-          <Card key={index} person={person} />
-        ))
-      }
+      <CardList persons={persons} />
     </>
   )
 }

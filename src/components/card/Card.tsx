@@ -1,4 +1,5 @@
-import type { Person } from '../utils/generateFakePersons';
+import './Card.css'
+import type { Person } from '../../utils/generateFakePersons';
 
 interface Props {
 	person: Person; 
