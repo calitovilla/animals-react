@@ -7,7 +7,7 @@ interface Props {
 
 const Card = ({ person }: Props) => {
     return (
-          <div className="card bg-base-100 w-96 shadow-sm">
+          <div className="card bg-base-100 shadow-sm">
             <div className="card-body">
               <div className="avatar">
                 <div className="w-24 rounded">
